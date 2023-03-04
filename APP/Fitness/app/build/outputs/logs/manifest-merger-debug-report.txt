@@ -1,0 +1,354 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:2:1-89:12
+INJECTED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:2:1-89:12
+INJECTED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:2:1-89:12
+INJECTED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:2:1-89:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\22615\.gradle\caches\transforms-3\da6b673a69fb2a650ea2c540874ae3b6\transformed\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
+MERGED from [cn.aigestudio.datepicker:DatePicker:2.2.0] C:\Users\22615\.gradle\caches\transforms-3\7a5dcd34691e2ba40c892f4a2c45fb6e\transformed\jetified-DatePicker-2.2.0\AndroidManifest.xml:2:1-12:12
+MERGED from [com.zhy:okhttputils:2.6.2] C:\Users\22615\.gradle\caches\transforms-3\14c048fc456e229103fd07f0fca04dbf\transformed\jetified-okhttputils-2.6.2\AndroidManifest.xml:2:1-11:12
+MERGED from [com.sangcomz:FishBun:0.6.5] C:\Users\22615\.gradle\caches\transforms-3\4b5570513f42f96c29c2c0f546a25df4\transformed\jetified-FishBun-0.6.5\AndroidManifest.xml:2:1-31:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\22615\.gradle\caches\transforms-3\1fd36809db60a6fa42a5d20229f2561b\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.material:material:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\f40be4a562d6a6d0f4406cebb2519035\transformed\material-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\22615\.gradle\caches\transforms-3\bfaf75dd0adca7e05e5d72f6d41e86c4\transformed\appcompat-1.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\22615\.gradle\caches\transforms-3\8cbccddabbf954d040b8c6c111675b01\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.6.0] C:\Users\22615\.gradle\caches\transforms-3\cb22b3accafb696a8d2d941ae7d5eca3\transformed\jetified-activity-1.6.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] C:\Users\22615\.gradle\caches\transforms-3\3ab64b7c30b8416af96c2275d0d18923\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\c4f13c2cf2c17bef675c2c145249c510\transformed\recyclerview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\7feaee03819112d2cb10623e5c71464d\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\1cc6bca9997e178070afdb1498f7a36e\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\e32f8f5629e14a18388f93111beea28f\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] C:\Users\22615\.gradle\caches\transforms-3\f1df46a6b3c1ce46dafee01d1a978012\transformed\lifecycle-viewmodel-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\22615\.gradle\caches\transforms-3\1c335de68a81e415fbe8634f86b3ac02\transformed\jetified-savedstate-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\e3ac9bdcd8a2aada6a88059d2531b287\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\22615\.gradle\caches\transforms-3\dfabe6a7cf534fc0e8262323bffcc827\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\22615\.gradle\caches\transforms-3\5759b97fcf5a92f1fc50869b3ff07d99\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\22615\.gradle\caches\transforms-3\309cd3a33a2dc4ea1bc57c2f15052582\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\22615\.gradle\caches\transforms-3\18f6105f5832a7901d26f5139d2bcabc\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\90b8d335f34fe274ba37f588fde4ac54\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\09b33efb7a48d734f940b1cdf715f1a1\transformed\coordinatorlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\d4bd4222a5eaa4f09642f55e284767f8\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\79ee4f8376cce2cf5af9e778d8f87889\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\baedcf5808a466b15d80279208a12a91\transformed\transition-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\0915a931fc5d3c6bc75b9084aa1a3986\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\db6479f24114c9017f015291e82960e0\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.9.0] C:\Users\22615\.gradle\caches\transforms-3\3ac9761c7be54384fe0a49806cb25084\transformed\core-1.9.0\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.core:core-ktx:1.9.0] C:\Users\22615\.gradle\caches\transforms-3\758e44ef3ba7606fd6823ed04b7ac6f2\transformed\jetified-core-ktx-1.9.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\22615\.gradle\caches\transforms-3\825daceadd99892e191f3d9357dbc0d3\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\2174427c8ece542ac8634ed10a685856\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\22615\.gradle\caches\transforms-3\f26d4bef23e64fe71aa80581bc28ec9c\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] C:\Users\22615\.gradle\caches\transforms-3\d88ae5086ab729f944a40a70dc395233\transformed\lifecycle-runtime-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\22615\.gradle\caches\transforms-3\15f0579cdd687dad8ce28cf94965078e\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\35291f9ee7957693f4e998dd51c1bac3\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\22615\.gradle\caches\transforms-3\170abdde32de47367a779a790159b235\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\22615\.gradle\caches\transforms-3\38b11ed02b8b13b1f1767309948205ed\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\22615\.gradle\caches\transforms-3\6af57d9516d7c4419e4842dd06918226\transformed\lifecycle-livedata-core-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\22615\.gradle\caches\transforms-3\1878fb048eb42294ed09aabc85bef745\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\c39fe2e3e6b2b19081ed54eeaadf08cb\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\7ef0df41e43353c4cf09169a1936e1a1\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\d26646d5d671d31da2743e68a91b76c1\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\0d0641bdbe07ee147a0f7c56a5812ca0\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\b623d7057d6b8f514f3574bd220fe3ba\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+INJECTED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:2:1-89:12
+INJECTED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:2:1-89:12
+INJECTED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:2:1-89:12
+	package
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:4:5-32
+		INJECTED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml
+		INJECTED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:2:1-89:12
+		INJECTED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:2:1-89:12
+		INJECTED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:6:5-80
+	android:name
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:6:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:7:5-81
+	android:name
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:7:22-78
+uses-permission#android.permission.INTERNET
+ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:8:5-67
+	android:name
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:8:22-64
+application
+ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:10:5-87:19
+REJECTED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\22615\.gradle\caches\transforms-3\da6b673a69fb2a650ea2c540874ae3b6\transformed\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
+REJECTED from [com.sangcomz:FishBun:0.6.5] C:\Users\22615\.gradle\caches\transforms-3\4b5570513f42f96c29c2c0f546a25df4\transformed\jetified-FishBun-0.6.5\AndroidManifest.xml:11:5-29:19
+REJECTED from [com.google.android.material:material:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\f40be4a562d6a6d0f4406cebb2519035\transformed\material-1.0.0\AndroidManifest.xml:22:5-20
+REJECTED from [androidx.emoji2:emoji2:1.2.0] C:\Users\22615\.gradle\caches\transforms-3\5759b97fcf5a92f1fc50869b3ff07d99\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
+REJECTED from [androidx.core:core:1.9.0] C:\Users\22615\.gradle\caches\transforms-3\3ac9761c7be54384fe0a49806cb25084\transformed\core-1.9.0\AndroidManifest.xml:28:5-89
+REJECTED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\22615\.gradle\caches\transforms-3\f26d4bef23e64fe71aa80581bc28ec9c\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:25:5-35:19
+REJECTED from [androidx.startup:startup-runtime:1.1.1] C:\Users\22615\.gradle\caches\transforms-3\15f0579cdd687dad8ce28cf94965078e\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+REJECTED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\22615\.gradle\caches\transforms-3\170abdde32de47367a779a790159b235\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+	tools:node
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:16:9-29
+	android:supportsRtl
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:15:9-35
+	android:label
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:13:9-41
+	android:roundIcon
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:14:9-52
+	android:icon
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:12:9-41
+	android:allowBackup
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:11:9-35
+	android:theme
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:17:9-40
+	android:usesCleartextTraffic
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:18:9-44
+activity#com.lilei.fitness.view.SplashActivity
+ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:19:9-28:20
+	android:screenOrientation
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:21:13-49
+	android:exported
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:22:13-36
+	android:name
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:20:13-48
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:23:13-27:29
+action#android.intent.action.MAIN
+ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:24:17-69
+	android:name
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:24:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:26:17-77
+	android:name
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:26:27-74
+activity#com.lilei.fitness.view.MainActivity
+ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:29:9-32:52
+	android:screenOrientation
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:32:13-49
+	android:launchMode
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:31:13-43
+	android:name
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:30:13-46
+activity#com.lilei.fitness.view.LoginActivity
+ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:34:9-37:52
+	android:screenOrientation
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:37:13-49
+	android:launchMode
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:36:13-43
+	android:name
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:35:13-47
+activity#com.lilei.fitness.view.RegisterActivity
+ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:39:9-42:52
+	android:screenOrientation
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:42:13-49
+	android:launchMode
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:41:13-43
+	android:name
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:40:13-50
+activity#com.lilei.fitness.view.DateCheckActivity
+ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:43:9-46:52
+	android:screenOrientation
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:46:13-49
+	android:launchMode
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:45:13-43
+	android:name
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:44:13-51
+activity#com.lilei.fitness.view.ConfigActivity
+ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:47:9-50:52
+	android:screenOrientation
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:50:13-49
+	android:launchMode
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:49:13-43
+	android:name
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:48:13-48
+activity#com.lilei.fitness.view.ReleaseNewsActivity
+ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:51:9-54:52
+	android:screenOrientation
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:54:13-49
+	android:launchMode
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:53:13-43
+	android:name
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:52:13-53
+activity#com.lilei.fitness.view.HomepageActivity
+ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:55:9-58:52
+	android:screenOrientation
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:58:13-49
+	android:launchMode
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:57:13-43
+	android:name
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:56:13-50
+activity#com.lilei.fitness.view.NewsDetailActivity
+ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:59:9-62:52
+	android:screenOrientation
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:62:13-49
+	android:launchMode
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:61:13-43
+	android:name
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:60:13-52
+activity#com.lilei.fitness.view.BeforeDateCheckActivity
+ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:63:9-66:52
+	android:screenOrientation
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:66:13-49
+	android:launchMode
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:65:13-43
+	android:name
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:64:13-57
+activity#com.lilei.fitness.view.CommentsListActivity
+ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:67:9-70:52
+	android:screenOrientation
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:70:13-49
+	android:launchMode
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:69:13-43
+	android:name
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:68:13-54
+activity#com.lilei.fitness.view.FavorsListActivity
+ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:71:9-74:52
+	android:screenOrientation
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:74:13-49
+	android:launchMode
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:73:13-43
+	android:name
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:72:13-52
+activity#com.lilei.fitness.view.VideoPlayer
+ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:75:9-78:53
+	android:screenOrientation
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:78:13-50
+	android:launchMode
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:77:13-43
+	android:name
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:76:13-45
+activity#com.lilei.fitness.view.test.VideoPlayer
+ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:81:9-84:53
+	android:screenOrientation
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:84:13-50
+	android:launchMode
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:83:13-43
+	android:name
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml:82:13-50
+uses-sdk
+INJECTED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml
+INJECTED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\22615\.gradle\caches\transforms-3\da6b673a69fb2a650ea2c540874ae3b6\transformed\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\22615\.gradle\caches\transforms-3\da6b673a69fb2a650ea2c540874ae3b6\transformed\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [cn.aigestudio.datepicker:DatePicker:2.2.0] C:\Users\22615\.gradle\caches\transforms-3\7a5dcd34691e2ba40c892f4a2c45fb6e\transformed\jetified-DatePicker-2.2.0\AndroidManifest.xml:8:5-10:41
+MERGED from [cn.aigestudio.datepicker:DatePicker:2.2.0] C:\Users\22615\.gradle\caches\transforms-3\7a5dcd34691e2ba40c892f4a2c45fb6e\transformed\jetified-DatePicker-2.2.0\AndroidManifest.xml:8:5-10:41
+MERGED from [com.zhy:okhttputils:2.6.2] C:\Users\22615\.gradle\caches\transforms-3\14c048fc456e229103fd07f0fca04dbf\transformed\jetified-okhttputils-2.6.2\AndroidManifest.xml:7:5-9:41
+MERGED from [com.zhy:okhttputils:2.6.2] C:\Users\22615\.gradle\caches\transforms-3\14c048fc456e229103fd07f0fca04dbf\transformed\jetified-okhttputils-2.6.2\AndroidManifest.xml:7:5-9:41
+MERGED from [com.sangcomz:FishBun:0.6.5] C:\Users\22615\.gradle\caches\transforms-3\4b5570513f42f96c29c2c0f546a25df4\transformed\jetified-FishBun-0.6.5\AndroidManifest.xml:7:5-9:41
+MERGED from [com.sangcomz:FishBun:0.6.5] C:\Users\22615\.gradle\caches\transforms-3\4b5570513f42f96c29c2c0f546a25df4\transformed\jetified-FishBun-0.6.5\AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\22615\.gradle\caches\transforms-3\1fd36809db60a6fa42a5d20229f2561b\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\22615\.gradle\caches\transforms-3\1fd36809db60a6fa42a5d20229f2561b\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\f40be4a562d6a6d0f4406cebb2519035\transformed\material-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\f40be4a562d6a6d0f4406cebb2519035\transformed\material-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\22615\.gradle\caches\transforms-3\bfaf75dd0adca7e05e5d72f6d41e86c4\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\22615\.gradle\caches\transforms-3\bfaf75dd0adca7e05e5d72f6d41e86c4\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\22615\.gradle\caches\transforms-3\8cbccddabbf954d040b8c6c111675b01\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\22615\.gradle\caches\transforms-3\8cbccddabbf954d040b8c6c111675b01\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.6.0] C:\Users\22615\.gradle\caches\transforms-3\cb22b3accafb696a8d2d941ae7d5eca3\transformed\jetified-activity-1.6.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.6.0] C:\Users\22615\.gradle\caches\transforms-3\cb22b3accafb696a8d2d941ae7d5eca3\transformed\jetified-activity-1.6.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] C:\Users\22615\.gradle\caches\transforms-3\3ab64b7c30b8416af96c2275d0d18923\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] C:\Users\22615\.gradle\caches\transforms-3\3ab64b7c30b8416af96c2275d0d18923\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\c4f13c2cf2c17bef675c2c145249c510\transformed\recyclerview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\c4f13c2cf2c17bef675c2c145249c510\transformed\recyclerview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\7feaee03819112d2cb10623e5c71464d\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\7feaee03819112d2cb10623e5c71464d\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\1cc6bca9997e178070afdb1498f7a36e\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\1cc6bca9997e178070afdb1498f7a36e\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\e32f8f5629e14a18388f93111beea28f\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\e32f8f5629e14a18388f93111beea28f\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] C:\Users\22615\.gradle\caches\transforms-3\f1df46a6b3c1ce46dafee01d1a978012\transformed\lifecycle-viewmodel-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] C:\Users\22615\.gradle\caches\transforms-3\f1df46a6b3c1ce46dafee01d1a978012\transformed\lifecycle-viewmodel-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\22615\.gradle\caches\transforms-3\1c335de68a81e415fbe8634f86b3ac02\transformed\jetified-savedstate-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\22615\.gradle\caches\transforms-3\1c335de68a81e415fbe8634f86b3ac02\transformed\jetified-savedstate-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\e3ac9bdcd8a2aada6a88059d2531b287\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\e3ac9bdcd8a2aada6a88059d2531b287\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\22615\.gradle\caches\transforms-3\dfabe6a7cf534fc0e8262323bffcc827\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\22615\.gradle\caches\transforms-3\dfabe6a7cf534fc0e8262323bffcc827\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\22615\.gradle\caches\transforms-3\5759b97fcf5a92f1fc50869b3ff07d99\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\22615\.gradle\caches\transforms-3\5759b97fcf5a92f1fc50869b3ff07d99\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\22615\.gradle\caches\transforms-3\309cd3a33a2dc4ea1bc57c2f15052582\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\22615\.gradle\caches\transforms-3\309cd3a33a2dc4ea1bc57c2f15052582\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\22615\.gradle\caches\transforms-3\18f6105f5832a7901d26f5139d2bcabc\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\22615\.gradle\caches\transforms-3\18f6105f5832a7901d26f5139d2bcabc\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\90b8d335f34fe274ba37f588fde4ac54\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\90b8d335f34fe274ba37f588fde4ac54\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\09b33efb7a48d734f940b1cdf715f1a1\transformed\coordinatorlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\09b33efb7a48d734f940b1cdf715f1a1\transformed\coordinatorlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\d4bd4222a5eaa4f09642f55e284767f8\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\d4bd4222a5eaa4f09642f55e284767f8\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\79ee4f8376cce2cf5af9e778d8f87889\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\79ee4f8376cce2cf5af9e778d8f87889\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\baedcf5808a466b15d80279208a12a91\transformed\transition-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\baedcf5808a466b15d80279208a12a91\transformed\transition-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\0915a931fc5d3c6bc75b9084aa1a3986\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\0915a931fc5d3c6bc75b9084aa1a3986\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\db6479f24114c9017f015291e82960e0\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\db6479f24114c9017f015291e82960e0\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.9.0] C:\Users\22615\.gradle\caches\transforms-3\3ac9761c7be54384fe0a49806cb25084\transformed\core-1.9.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.9.0] C:\Users\22615\.gradle\caches\transforms-3\3ac9761c7be54384fe0a49806cb25084\transformed\core-1.9.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.9.0] C:\Users\22615\.gradle\caches\transforms-3\758e44ef3ba7606fd6823ed04b7ac6f2\transformed\jetified-core-ktx-1.9.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.9.0] C:\Users\22615\.gradle\caches\transforms-3\758e44ef3ba7606fd6823ed04b7ac6f2\transformed\jetified-core-ktx-1.9.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\22615\.gradle\caches\transforms-3\825daceadd99892e191f3d9357dbc0d3\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\22615\.gradle\caches\transforms-3\825daceadd99892e191f3d9357dbc0d3\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\2174427c8ece542ac8634ed10a685856\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\2174427c8ece542ac8634ed10a685856\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\22615\.gradle\caches\transforms-3\f26d4bef23e64fe71aa80581bc28ec9c\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\22615\.gradle\caches\transforms-3\f26d4bef23e64fe71aa80581bc28ec9c\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] C:\Users\22615\.gradle\caches\transforms-3\d88ae5086ab729f944a40a70dc395233\transformed\lifecycle-runtime-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] C:\Users\22615\.gradle\caches\transforms-3\d88ae5086ab729f944a40a70dc395233\transformed\lifecycle-runtime-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\22615\.gradle\caches\transforms-3\15f0579cdd687dad8ce28cf94965078e\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\22615\.gradle\caches\transforms-3\15f0579cdd687dad8ce28cf94965078e\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\35291f9ee7957693f4e998dd51c1bac3\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\35291f9ee7957693f4e998dd51c1bac3\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\22615\.gradle\caches\transforms-3\170abdde32de47367a779a790159b235\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\22615\.gradle\caches\transforms-3\170abdde32de47367a779a790159b235\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\22615\.gradle\caches\transforms-3\38b11ed02b8b13b1f1767309948205ed\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\22615\.gradle\caches\transforms-3\38b11ed02b8b13b1f1767309948205ed\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\22615\.gradle\caches\transforms-3\6af57d9516d7c4419e4842dd06918226\transformed\lifecycle-livedata-core-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\22615\.gradle\caches\transforms-3\6af57d9516d7c4419e4842dd06918226\transformed\lifecycle-livedata-core-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\22615\.gradle\caches\transforms-3\1878fb048eb42294ed09aabc85bef745\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\22615\.gradle\caches\transforms-3\1878fb048eb42294ed09aabc85bef745\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\c39fe2e3e6b2b19081ed54eeaadf08cb\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\c39fe2e3e6b2b19081ed54eeaadf08cb\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\7ef0df41e43353c4cf09169a1936e1a1\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\7ef0df41e43353c4cf09169a1936e1a1\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\d26646d5d671d31da2743e68a91b76c1\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\d26646d5d671d31da2743e68a91b76c1\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\0d0641bdbe07ee147a0f7c56a5812ca0\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\0d0641bdbe07ee147a0f7c56a5812ca0\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\b623d7057d6b8f514f3574bd220fe3ba\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\22615\.gradle\caches\transforms-3\b623d7057d6b8f514f3574bd220fe3ba\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+INJECTED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml
+INJECTED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml
+		INJECTED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml
+		ADDED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml
+		INJECTED from D:\AndroidProject\fintess\fitness_Android-master (1)\fitness_Android-master\APP\Fitness\app\src\main\AndroidManifest.xml
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] C:\Users\22615\.gradle\caches\transforms-3\3ac9761c7be54384fe0a49806cb25084\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.9.0] C:\Users\22615\.gradle\caches\transforms-3\3ac9761c7be54384fe0a49806cb25084\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.9.0] C:\Users\22615\.gradle\caches\transforms-3\3ac9761c7be54384fe0a49806cb25084\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+permission#com.lilei.fitness.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] C:\Users\22615\.gradle\caches\transforms-3\3ac9761c7be54384fe0a49806cb25084\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.9.0] C:\Users\22615\.gradle\caches\transforms-3\3ac9761c7be54384fe0a49806cb25084\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.9.0] C:\Users\22615\.gradle\caches\transforms-3\3ac9761c7be54384fe0a49806cb25084\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] C:\Users\22615\.gradle\caches\transforms-3\3ac9761c7be54384fe0a49806cb25084\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.9.0] C:\Users\22615\.gradle\caches\transforms-3\3ac9761c7be54384fe0a49806cb25084\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+uses-permission#com.lilei.fitness.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] C:\Users\22615\.gradle\caches\transforms-3\3ac9761c7be54384fe0a49806cb25084\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.9.0] C:\Users\22615\.gradle\caches\transforms-3\3ac9761c7be54384fe0a49806cb25084\transformed\core-1.9.0\AndroidManifest.xml:26:22-94

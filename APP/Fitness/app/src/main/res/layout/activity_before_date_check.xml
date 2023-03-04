@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/before_date_check"
     android:gravity="center"
-    tools:mockup_opacity=""
     android:orientation="vertical">
 
     <ImageView

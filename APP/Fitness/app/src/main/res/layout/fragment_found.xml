@@ -14,7 +14,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@id/found_top_bg"
+                android:id="@+id/found_top_bg"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:adjustViewBounds="true"
@@ -46,7 +46,7 @@
             android:background="@color/darkgrey" />
 
         <ListView
-            android:id="@id/found_list"
+            android:id="@+id/found_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="1dp"

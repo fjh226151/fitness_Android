@@ -40,7 +40,7 @@
                     android:text="@string/config_server_config_ip" />
 
                 <EditText
-                    android:id="@id/config_et_ip"
+                    android:id="@+id/config_et_ip"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -71,7 +71,7 @@
                     android:text="@string/config_server_config_port" />
 
                 <EditText
-                    android:id="@id/config_et_port"
+                    android:id="@+id/config_et_port"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -86,7 +86,7 @@
     </ScrollView>
 
     <Button
-        android:id="@id/config_btn_save"
+        android:id="@+id/config_btn_save"
         android:layout_width="fill_parent"
         android:layout_height="38dp"
         android:layout_marginBottom="@dimen/login_comfirm_button_margin_top"

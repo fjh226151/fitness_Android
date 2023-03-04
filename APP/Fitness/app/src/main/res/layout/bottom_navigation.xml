@@ -6,7 +6,7 @@
     android:orientation="horizontal">
     <!--train-->
     <LinearLayout
-        android:id="@id/bottom_train"
+        android:id="@+id/bottom_train"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -14,13 +14,13 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@id/bottom_ico_train"
+            android:id="@+id/bottom_ico_train"
             android:layout_width="@dimen/bottom_icon_size"
             android:layout_height="@dimen/bottom_icon_size"
             android:src="@drawable/icon_train_pressed" />
 
         <TextView
-            android:id="@id/bottom_txt_train"
+            android:id="@+id/bottom_txt_train"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/bottom_train"
@@ -30,7 +30,7 @@
     <!--train-->
     <!--found-->
     <LinearLayout
-        android:id="@id/bottom_found"
+        android:id="@+id/bottom_found"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -38,13 +38,13 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@id/bottom_ico_found"
+            android:id="@+id/bottom_ico_found"
             android:layout_width="@dimen/bottom_icon_size"
             android:layout_height="@dimen/bottom_icon_size"
             android:src="@drawable/icon_found_unpressed" />
 
         <TextView
-            android:id="@id/bottom_txt_found"
+            android:id="@+id/bottom_txt_found"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/bottom_found"
@@ -54,7 +54,7 @@
     <!--found-->
     <!--me-->
     <LinearLayout
-        android:id="@id/bottom_me"
+        android:id="@+id/bottom_me"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -62,13 +62,13 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@id/bottom_ico_me"
+            android:id="@+id/bottom_ico_me"
             android:layout_width="@dimen/bottom_icon_size"
             android:layout_height="@dimen/bottom_icon_size"
             android:src="@drawable/icon_me_unpressed" />
 
         <TextView
-            android:id="@id/bottom_txt_me"
+            android:id="@+id/bottom_txt_me"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/bottom_me"

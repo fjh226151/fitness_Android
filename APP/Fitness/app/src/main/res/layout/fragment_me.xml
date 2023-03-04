@@ -15,7 +15,7 @@
             android:orientation="vertical">
             <!--me_top-->
             <LinearLayout
-                android:id="@id/me_homepage"
+                android:id="@+id/me_homepage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
@@ -31,7 +31,7 @@
                     android:src="@drawable/fitness_round" />
 
                 <TextView
-                    android:id="@id/me_homepage_username"
+                    android:id="@+id/me_homepage_username"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -83,7 +83,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@id/me_exercise_time"
+                        android:id="@+id/me_exercise_time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="15dp"
@@ -116,7 +116,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@id/me_record_days"
+                        android:id="@+id/me_record_days"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="15dp"
@@ -141,7 +141,7 @@
                 android:orientation="vertical">
                 <!--comment-->
                 <LinearLayout
-                    android:id="@id/me_item_comment"
+                    android:id="@+id/me_item_comment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
@@ -184,7 +184,7 @@
                 <!--split-->
                 <!--favor-->
                 <LinearLayout
-                    android:id="@id/me_item_favor"
+                    android:id="@+id/me_item_favor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
@@ -227,7 +227,7 @@
                 <!--split-->
                 <!--record-->
                 <LinearLayout
-                    android:id="@id/me_item_reord"
+                    android:id="@+id/me_item_reord"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
@@ -265,7 +265,7 @@
             <!--comment/record-->
             <!--exit-->
             <TextView
-                android:id="@id/me_item_exit"
+                android:id="@+id/me_item_exit"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="15dp"

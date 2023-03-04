@@ -4,7 +4,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@id/found_list_icon"
+        android:id="@+id/found_list_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
@@ -19,7 +19,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@id/found_list_item_title"
+            android:id="@+id/found_list_item_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="marquee"
@@ -38,7 +38,7 @@
             android:textSize="@dimen/item_title_size" />
 
         <TextView
-            android:id="@id/found_list_item_username"
+            android:id="@+id/found_list_item_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_name"

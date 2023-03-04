@@ -4,7 +4,7 @@
     android:background="@color/title_bg" >
 
     <LinearLayout
-        android:id="@id/share_layout"
+        android:id="@+id/share_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -17,7 +17,7 @@
         android:paddingRight="8.0dip" >
 
         <ImageView
-            android:id="@id/web_share_btn"
+            android:id="@+id/web_share_btn"
             android:layout_width="35.0dip"
             android:layout_height="35.0dip"
             android:layout_marginRight="10.0dip"
@@ -28,7 +28,7 @@
             android:visibility="gone" />
 
         <ImageView
-            android:id="@id/web_share_close"
+            android:id="@+id/web_share_close"
             android:layout_width="35.0dip"
             android:layout_height="35.0dip"
             android:layout_gravity="right"
@@ -39,7 +39,7 @@
             android:visibility="gone" />
 
         <ImageView
-            android:id="@id/web_share_more"
+            android:id="@+id/web_share_more"
             android:layout_width="35.0dip"
             android:layout_height="35.0dip"
             android:layout_gravity="right"
@@ -50,7 +50,7 @@
             android:visibility="gone" />
 
         <ImageView
-            android:id="@id/web_share_edit"
+            android:id="@+id/web_share_edit"
             android:layout_width="35.0dip"
             android:layout_height="35.0dip"
             android:layout_gravity="right"
@@ -62,7 +62,7 @@
             android:visibility="gone" />
 
         <Button
-            android:id="@id/titleRightButton"
+            android:id="@+id/titleRightButton"
             style="@style/title_right_button"
             android:layout_width="wrap_content"
             android:layout_height="34.0dip"
@@ -89,7 +89,7 @@
         android:background="#00000000" >
 
         <ImageView
-            android:id="@id/title_back"
+            android:id="@+id/title_back"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/top_back_bottom_height"
             android:layout_gravity="center"
@@ -99,7 +99,7 @@
     </FrameLayout>
 
     <TextView
-        android:id="@id/titleText"
+        android:id="@+id/titleText"
         style="@style/layout_title"
         android:layout_width="wrap_content"
         android:layout_centerHorizontal="true"

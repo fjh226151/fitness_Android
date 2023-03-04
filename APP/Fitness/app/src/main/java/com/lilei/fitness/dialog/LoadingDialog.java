@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.lilei.fitness.R;
@@ -14,7 +15,7 @@ public class LoadingDialog extends Dialog{
 
 	private String msg;
 	private TextView txt;
-	private RoundProgressBar progressBar;
+	private ProgressBar progressBar;
 	private ImageView normal_loading_bar;
 	private AnimationDrawable mAnimation;
 	
@@ -38,7 +39,7 @@ public class LoadingDialog extends Dialog{
 	
 	private void initViews() {
 		this.txt=(TextView)findViewById(R.id.loading_content_text);
-		this.progressBar=(RoundProgressBar)findViewById(R.id.roundProgressBar);
+		this.progressBar=(ProgressBar) findViewById(R.id.roundProgressBar);
 		this.normal_loading_bar=(ImageView)findViewById(R.id.normal_loading);
 		this.txt.setText(msg);
 		

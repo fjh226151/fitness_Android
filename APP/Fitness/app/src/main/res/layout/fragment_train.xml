@@ -14,7 +14,7 @@
             android:orientation="vertical">
             <!--baseTraining-->
             <LinearLayout
-                android:id="@id/train_base"
+                android:id="@+id/train_base"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -79,7 +79,7 @@
                 android:background="@color/brown" />
             <!--enhanceTraining-->
             <LinearLayout
-                android:id="@id/train_enhance"
+                android:id="@+id/train_enhance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -145,7 +145,7 @@
                 android:background="@color/brown" />
             <!--acmeTraining-->
             <LinearLayout
-                android:id="@id/train_acme"
+                android:id="@+id/train_acme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"

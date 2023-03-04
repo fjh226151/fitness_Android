@@ -1,0 +1,4 @@
+#Sat Mar 04 17:01:24 CST 2023
+base.0=D\:\\AndroidProject\\fintess\\fitness_Android-master (1)\\fitness_Android-master\\APP\\Fitness\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

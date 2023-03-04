@@ -18,7 +18,7 @@
             android:padding="20dp">
 
             <EditText
-                android:id="@id/add_news_et_share_title"
+                android:id="@+id/add_news_et_share_title"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
                 android:maxLines="1"
