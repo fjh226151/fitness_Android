@@ -36,7 +36,7 @@ import okhttp3.Call;
  * Created by djzhao on 17/04/30.
  */
 
-public class FoundFragment extends Fragment implements AdapterView.OnItemClickListener {
+public class FoundFragment extends BaseFragment implements AdapterView.OnItemClickListener {
 
     private ListView foundList;
     private FoundNewsAdapter adapter;
@@ -56,18 +56,9 @@ public class FoundFragment extends Fragment implements AdapterView.OnItemClickLi
     @Override
     public void onResume() {
         super.onResume();
-        reLoadNews();
+       // reLoadNews();
     }
 
-    private void reLoadNews() {
-        String url = Constants.BASE_URL + "News?method=getNewsList";
-        OkHttpUtils
-                .post()
-                .url(url)
-                .id(1)
-                .build()
-                .execute(new MyStringCallback());
-    }
 
     public void findViewById(View v) {
         foundList = (ListView) v.findViewById(R.id.found_list);
@@ -86,34 +77,4 @@ public class FoundFragment extends Fragment implements AdapterView.OnItemClickLi
         startActivity(intent);
     }
 
-    public class MyStringCallback extends StringCallback {
-        @Override
-        public void onResponse(String response, int id) {
-            Gson gson = new Gson();
-            try {
-                Type type = new TypeToken<ArrayList<NewsListForFound>>() {
-                }.getType();
-                mList = gson.fromJson(response, type);
-            } catch (Exception e) {
-                Toast.makeText(mContext, e.getMessage(), Toast.LENGTH_SHORT).show();
-                mList = null;
-            }
-            switch (id) {
-                case 1:
-                    if (mList != null && mList.size() > 0) {
-                        adapter = new FoundNewsAdapter(mContext, mList);
-                        foundList.setAdapter(adapter);
-                    }
-                    break;
-                default:
-                    Toast.makeText(mContext, "what！", Toast.LENGTH_SHORT).show();
-                    break;
-            }
-        }
-
-        @Override
-        public void onError(Call arg0, Exception arg1, int arg2) {
-            Toast.makeText(mContext, "网络链接出错！", Toast.LENGTH_SHORT).show();
-        }
-    }
 }

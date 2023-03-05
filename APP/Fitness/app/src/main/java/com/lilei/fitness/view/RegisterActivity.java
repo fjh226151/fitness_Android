@@ -1,10 +1,15 @@
 package com.lilei.fitness.view;
 
+import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
 import okhttp3.Call;
+import tech.gujin.toast.ToastUtil;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -16,14 +21,18 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.lilei.fitness.R;
+import com.lilei.fitness.bean.user;
 import com.lilei.fitness.entity.User;
 import com.lilei.fitness.utils.AppManager;
 import com.lilei.fitness.utils.Constants;
 import com.lilei.fitness.utils.MyDialogHandler;
 import com.lilei.fitness.utils.SharedPreferencesUtils;
 import com.lilei.fitness.view.base.BaseActivity;
+import com.tencent.mmkv.MMKV;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
+
+import java.util.Objects;
 
 public class RegisterActivity extends BaseActivity implements OnClickListener {
     private String TITLE_NAME = "注册";
@@ -99,31 +108,51 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
         if (radio_sex.getCheckedRadioButtonId() == R.id.reg_rd_male) {
             sex = "男";
         }
-        //d.判断用户名密码是否为空，不为空请求服务器（省略，默认请求成功）i
-        if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password) || TextUtils.isEmpty(repassword) || TextUtils.isEmpty(height) || TextUtils.isEmpty(weight)) {
-            DisplayToast("信息不能为空");
-            return;
-        }
+
         // 判断两次密码
         if (!password.equals(repassword)) {
-            DisplayToast("两次密码输入不一致");
+            ToastUtil.show("两次密码输入不一致");
             return;
         }
-        uiFlusHandler.sendEmptyMessage(SHOW_LOADING_DIALOG);
-        // 服务端验证
-        String url = Constants.BASE_URL + "User?method=register";
-        OkHttpUtils
-                .post()
-                .url(url)
-                .addParams("username", username)
-                .addParams("password", password)
-                .addParams("sex", sex)
-                .addParams("height", height)
-                .addParams("weight", weight)
-                .id(1)
-                .build()
-                .execute(new MyStringCallback());
+
+        if (TextUtils.isEmpty(username)) {
+            ToastUtil.show("用户名不可为空");
+            return;
+        }
+        if (TextUtils.isEmpty(password)) {
+            ToastUtil.show("密码不可为空");
+            return;
+        }
+        if (TextUtils.isEmpty(repassword)) {
+            ToastUtil.show("两次密码不一致");
+            return;
+        }
+        if (TextUtils.isEmpty(height)) {
+            ToastUtil.show("身高不可为空");
+            return;
+        }
+        if (TextUtils.isEmpty(weight)) {
+            ToastUtil.show("体重不可为空");
+            return;
+        }
+        showLoadingDialog();
+        user userData = new user(height, weight, sex);
+        userData.setUsername(username);
+        userData.setPassword(password);
+        userData.signUp(new SaveListener<user>() {
+            @Override
+            public void done(user user, BmobException e) {
+                hideLoadingDialog();
+                if (e == null) {
+                    Objects.requireNonNull(MMKV.defaultMMKV()).encode("userId", user.getObjectId());
+                    openActivity(LoginActivity.class);
+                } else {
+                    ToastUtil.show("创建数据失败：" + e.getMessage());
+                }
+            }
+        });
     }
+
 
     public class MyStringCallback extends StringCallback {
 

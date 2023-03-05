@@ -1,5 +1,9 @@
 package com.lilei.fitness.view;
 
+
+
+
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -8,6 +12,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+
 
 import com.lilei.fitness.R;
 import com.lilei.fitness.fragment.FoundFragment;
@@ -34,9 +40,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private TextView txtMe;
     private TextView txtTitle;
 
-    private TrainingFragment trainingFragment;
-    private FoundFragment foundFragment;
-    private MeFragment meFragment;
+    private Fragment trainingFragment;
+    private Fragment foundFragment;
+    private Fragment meFragment;
     private long mExitTime;
 
     @Override
@@ -128,23 +134,25 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     /**
      * 切换Fragment
+     *
      * @param btnId
      */
     private void refreashFragment(int btnId) {
-        FragmentManager manager = getFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
+        FragmentManager fragmentManager = getFragmentManager();
+        //  FragmentTransaction transaction = manager.beginTransaction();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         switch (btnId) {
             case R.id.bottom_train:
-                transaction.replace(R.id.fragment_container, trainingFragment);
+                fragmentTransaction.replace(R.id.fragment_container,  trainingFragment);
                 break;
             case R.id.bottom_found:
-                transaction.replace(R.id.fragment_container, foundFragment);
+                fragmentTransaction.replace(R.id.fragment_container, foundFragment);
                 break;
             case R.id.bottom_me:
-                transaction.replace(R.id.fragment_container, meFragment);
+                fragmentTransaction.replace(R.id.fragment_container, meFragment);
                 break;
         }
-        transaction.commit();
+        fragmentTransaction.commit();
     }
 
     private void changeTabState(int tabId) {
@@ -173,7 +181,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             if ((System.currentTimeMillis() - mExitTime) > 800) {
                 DisplayToast("再按一次退出肌撕裂者");

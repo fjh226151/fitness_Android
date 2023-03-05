@@ -3,6 +3,7 @@ package com.lilei.fitness.view;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,7 +15,7 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.lilei.fitness.R;
-import com.lilei.fitness.entity.User;
+import com.lilei.fitness.bean.user;
 import com.lilei.fitness.utils.Constants;
 import com.lilei.fitness.utils.MyDialogHandler;
 import com.lilei.fitness.utils.SharedPreferencesUtils;
@@ -22,7 +23,13 @@ import com.lilei.fitness.view.base.BaseActivity;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
+import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.QueryListener;
+import cn.bmob.v3.listener.UpdateListener;
 import okhttp3.Call;
+import tech.gujin.toast.ToastUtil;
 
 /**
  * Created by djzhao on 17/05/01.
@@ -60,6 +67,12 @@ public class HomepageActivity extends BaseActivity implements View.OnClickListen
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        getgUser();
+    }
+
+    @Override
     protected void findViewById() {
         this.title_back = $(R.id.title_back);
         this.titleText = $(R.id.titleText);
@@ -73,6 +86,40 @@ public class HomepageActivity extends BaseActivity implements View.OnClickListen
         femaleRadio = $(R.id.homepage_rd_female);
     }
 
+    private void getgUser() {
+        showLoadingDialog();
+        if (!TextUtils.isEmpty(userId)) {
+            Log.e("test", "value:" + userId);
+            BmobQuery<user> userDataBmobQuery = new BmobQuery<>();
+            userDataBmobQuery.getObject(userId.trim(), new QueryListener<user>() {
+                @Override
+                public void done(user userData, BmobException e) {
+                    hideLoadingDialog();
+                    if (e == null) {
+                        Log.e("test", "user:" + userData.toString());
+                        height.setText(userData.getShengao());
+                        weight.setText(userData.getTizhong());
+                        String sex = userData.getSex();
+                        switch (sex) {
+                            case "男": {
+                                maleRadio.setChecked(true);
+                                femaleRadio.setChecked(false);
+                                break;
+                            }
+                            case "女": {
+                                maleRadio.setChecked(false);
+                                femaleRadio.setChecked(true);
+                                break;
+                            }
+                        }
+                    } else {
+                        ToastUtil.show("请联系管理员");
+                    }
+                }
+            });
+        }
+    }
+
     @Override
     protected void initView() {
         mContext = this;
@@ -81,7 +128,7 @@ public class HomepageActivity extends BaseActivity implements View.OnClickListen
         this.title_back.setOnClickListener(this);
         update.setOnClickListener(this);
         uiFlusHandler = new MyDialogHandler(mContext, "更新中...");
-        echo();
+        //echo();
 
     }
 
@@ -93,99 +140,37 @@ public class HomepageActivity extends BaseActivity implements View.OnClickListen
             }
             break;
             case R.id.homepage_btn_update:
-                checkInfo();
+                updateInfo();
                 break;
         }
     }
 
-    private void echo() {
-        username.setText(Constants.USER.getUsername());
-        height.setText(Constants.USER.getHeight() + "");
-        weight.setText(Constants.USER.getWeight() + "");
-        if (Constants.USER.getSex().equals("女")) {
-            femaleRadio.setChecked(true);
-        } else {
-            maleRadio.setChecked(true);
-        }
-    }
-
-    private void checkInfo() {
-        heightStr = height.getText().toString().trim();
-        weightStr = weight.getText().toString().trim();
-        sex = "男";
-        if (sexGroup.getCheckedRadioButtonId() == R.id.homepage_rd_female) {
+    private void updateInfo() {
+        showLoadingDialog();
+        String h = height.getText().toString().trim();
+        String w = weight.getText().toString().trim();
+        String sex = "";
+        if (maleRadio.isChecked()) {
+            sex = "男";
+        } else if (femaleRadio.isChecked()) {
             sex = "女";
         }
-
-        if (TextUtils.isEmpty(heightStr) || TextUtils.isEmpty(weightStr)) {
-            DisplayToast("不可留空！");
-            return;
-        }
-
-        update();
-
-    }
-
-    private void update() {
-        uiFlusHandler.sendEmptyMessage(SHOW_LOADING_DIALOG);
-        String url = Constants.BASE_URL + "User?method=update";
-        OkHttpUtils
-                .post()
-                .url(url)
-                .addParams("username", Constants.USER.getUsername())
-                .addParams("height", heightStr)
-                .addParams("weight", weightStr)
-                .addParams("sex", sex)
-                .id(1)
-                .build()
-                .execute(new MyStringCallback());
-    }
-
-    public class MyStringCallback extends StringCallback {
-
-        @Override
-        public void onResponse(String response, int id) {
-            Gson gson = new Gson();
-            switch (id) {
-                case 1:
-                    uiFlusHandler.sendEmptyMessage(DISMISS_LOADING_DIALOG);
-                    User user = null;
-                    try {
-                        user = gson.fromJson(response, User.class);
-                    } catch (JsonSyntaxException e) {
-                        user = null;
-                    }
-                    if (user == null) {
-                        DisplayToast(response);
-                        return;
-                    } else {
-                        // 存储用户
-                        Constants.USER.setHeight(user.getHeight());
-                        Constants.USER.setWeight(user.getWeight());
-                        Constants.USER.setSex(user.getSex());
-                        user.setPassword(Constants.USER.getPassword());
-                        user.setUserId(Constants.USER.getUserId());
-                        boolean result = SharedPreferencesUtils.saveUserInfo(mContext, user);
-                        if (result) {
-                            Toast.makeText(mContext, "更新成功！", Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(mContext, "用户信息存储失败", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                    finish();
-                    break;
-                case 2:
-
-                    break;
-                default:
-                    DisplayToast("what?");
-                    break;
+        Log.e("test", "value:" + userId);
+        BmobUser currentUser = BmobUser.getCurrentUser();
+        currentUser.setValue("shengao", h);
+        currentUser.setValue("tizhong", w);
+        currentUser.setValue("sex", sex);
+        currentUser.update(new UpdateListener() {
+            @Override
+            public void done(BmobException e) {
+                hideLoadingDialog();
+                if (e == null) {
+                    ToastUtil.show("更新用户信息成功");
+                    getgUser();
+                } else {
+                    ToastUtil.show("更新用户信息失败");
+                }
             }
-        }
-
-        @Override
-        public void onError(Call arg0, Exception arg1, int arg2) {
-            DisplayToast("网络链接出错！");
-        }
+        });
     }
 }

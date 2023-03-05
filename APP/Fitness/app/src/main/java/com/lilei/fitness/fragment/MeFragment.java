@@ -4,6 +4,8 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,7 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.lilei.fitness.R;
+import com.lilei.fitness.bean.user;
 import com.lilei.fitness.entity.User;
 import com.lilei.fitness.utils.AppManager;
 import com.lilei.fitness.utils.Constants;
@@ -24,18 +27,24 @@ import com.lilei.fitness.view.FavorsListActivity;
 import com.lilei.fitness.view.HomepageActivity;
 import com.lilei.fitness.view.LoginActivity;
 import com.lilei.fitness.view.base.BaseActivity;
+import com.tencent.mmkv.MMKV;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import org.jetbrains.annotations.Nullable;
 
+import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.QueryListener;
 import okhttp3.Call;
+import tech.gujin.toast.ToastUtil;
 
 /**
  * Created by djzhao on 17/04/30.
  */
 
-public class MeFragment extends Fragment implements View.OnClickListener {
+public class MeFragment extends BaseFragment implements View.OnClickListener {
 
     private LinearLayout homepage;
     private LinearLayout comment;
@@ -46,6 +55,7 @@ public class MeFragment extends Fragment implements View.OnClickListener {
     private TextView exerciseTimeTextView;
     private TextView recordDaysTextView;
     private TextView exit;
+    private String userId = MMKV.defaultMMKV().decodeString("userId");
 
     @Nullable
     @Override
@@ -55,6 +65,12 @@ public class MeFragment extends Fragment implements View.OnClickListener {
         initView();
 
         return v;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        getgUser();
     }
 
     public void findViewById(View v) {
@@ -70,35 +86,36 @@ public class MeFragment extends Fragment implements View.OnClickListener {
     }
 
     public void initView() {
+        showLoadingDialog();
         homepage.setOnClickListener(this);
         comment.setOnClickListener(this);
         record.setOnClickListener(this);
         favor.setOnClickListener(this);
-
         exit.setOnClickListener(this);
-        
-        echo();
-        getRecords();
+
     }
 
-
-    private void getRecords() {
-        String url = Constants.BASE_URL + "DailyCheck?method=getHomepageTotalRecord";
-        OkHttpUtils
-                .post()
-                .url(url)
-                .addParams("userId", Constants.USER.getUserId() + "")
-                .id(1)
-                .build()
-                .execute(new MyStringCallback());
+    private void getgUser() {
+        if (!TextUtils.isEmpty(userId)) {
+            BmobQuery<user> userDataBmobQuery = new BmobQuery<>();
+            userDataBmobQuery.getObject(userId.trim(), new QueryListener<user>() {
+                @Override
+                public void done(user userData, BmobException e) {
+                    hideLoadingDialog();
+                    if (e == null) {
+                        usernameTV.setText(userData.getUsername());
+                    } else {
+                        ToastUtil.show("请联系管理员");
+                    }
+                }
+            });
+        }
     }
 
     /**
      * 回显
      */
-    private void echo() {
-        usernameTV.setText(Constants.USER.getUsername());
-    }
+
 
     @Override
     public void onClick(View v) {
@@ -116,35 +133,13 @@ public class MeFragment extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), BeforeDateCheckActivity.class));
                 break;
             case R.id.me_item_exit:
-                SystemClock.sleep(500);
-                AppManager.getInstance().killAllActivity();
+                MMKV.defaultMMKV().encode("userId", "");
+                getActivity().finish();
+                BmobUser.logOut();
                 startActivity(new Intent(getActivity(), LoginActivity.class));
                 break;
         }
     }
 
-    public class MyStringCallback extends StringCallback {
 
-        @Override
-        public void onResponse(String response, int id) {
-            switch (id) {
-                case 1:
-                    String[] items = response.split(":");
-                    exerciseTimeTextView.setText(items[1]);
-                    recordDaysTextView.setText(items[0]);
-                    break;
-                case 2:
-
-                    break;
-                default:
-                    Toast.makeText(getActivity(), "what?", Toast.LENGTH_SHORT).show();
-                    break;
-            }
-        }
-
-        @Override
-        public void onError(Call arg0, Exception arg1, int arg2) {
-            Toast.makeText(getActivity(), "网络链接出错！", Toast.LENGTH_SHORT).show();
-        }
-    }
 }

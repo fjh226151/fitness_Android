@@ -18,7 +18,7 @@ import org.jetbrains.annotations.Nullable;
  * Created by djzhao on 17/04/30.
  */
 
-public class TrainingFragment extends Fragment implements View.OnClickListener {
+public class TrainingFragment extends BaseFragment implements View.OnClickListener {
 
     private LinearLayout baseTraning;
     private LinearLayout enhanceTraning;
