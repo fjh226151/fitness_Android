@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.lilei.fitness">
-
+    <uses-permission android:name="miui.permission.READ_STEPS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,21 +12,23 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!--保持CPU 运转，屏幕和键盘灯有可能是关闭的,用于文件上传和下载 -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-feature android:name="android.hardware.sensor.stepcounter"/>
+    <uses-feature android:name="feature:android.hardware.sensor.stepdetector"/>
     <application
+        android:name=".app"
         android:allowBackup="true"
         android:icon="@drawable/fitness"
         android:label="@string/app_name"
         android:roundIcon="@drawable/fitness_round"
         android:supportsRtl="true"
-        android:name=".app"
-        tools:node="replace"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        tools:node="replace">
         <activity
             android:name=".view.SplashActivity"
-            android:screenOrientation="portrait"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -92,8 +94,7 @@
         <!--test-->
         <provider
             android:name="cn.bmob.v3.util.BmobContentProvider"
-            android:authorities="com.lilei.fitness.BmobContentProvider">
-        </provider>
+            android:authorities="com.lilei.fitness.BmobContentProvider"></provider>
     </application>
 
 </manifest>

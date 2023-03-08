@@ -1,17 +1,31 @@
 package com.lilei.fitness.fragment;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.RequiresApi;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
@@ -20,7 +34,10 @@ import com.lilei.fitness.bean.user;
 import com.lilei.fitness.entity.User;
 import com.lilei.fitness.utils.AppManager;
 import com.lilei.fitness.utils.Constants;
+import com.lilei.fitness.utils.FeatureParser;
+import com.lilei.fitness.utils.SensorUtil;
 import com.lilei.fitness.utils.SharedPreferencesUtils;
+import com.lilei.fitness.utils.XiaoMiStep;
 import com.lilei.fitness.view.BeforeDateCheckActivity;
 import com.lilei.fitness.view.CommentsListActivity;
 import com.lilei.fitness.view.FavorsListActivity;
@@ -32,6 +49,8 @@ import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import org.jetbrains.annotations.Nullable;
+
+import java.util.LinkedList;
 
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.BmobUser;
@@ -45,7 +64,8 @@ import tech.gujin.toast.ToastUtil;
  */
 
 public class MeFragment extends BaseFragment implements View.OnClickListener {
-
+    private Integer mStepDetector = 0;
+    private Integer mStepCounter = 0;
     private LinearLayout homepage;
     private LinearLayout comment;
     private LinearLayout record;
@@ -56,21 +76,31 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
     private TextView recordDaysTextView;
     private TextView exit;
     private String userId = MMKV.defaultMMKV().decodeString("userId");
+    private SensorManager mSensorManager;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_me, null);
         findViewById(v);
         initView();
-
+        mSensorManager = (SensorManager) getContext().getSystemService(Context.SENSOR_SERVICE);
+        SensorUtil.Companion.test(mSensorManager);
         return v;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        getgUser();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            getgUser();
+        }
     }
 
     public void findViewById(View v) {
@@ -95,6 +125,7 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     private void getgUser() {
         if (!TextUtils.isEmpty(userId)) {
             BmobQuery<user> userDataBmobQuery = new BmobQuery<>();
@@ -110,6 +141,8 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
                 }
             });
         }
+        LinkedList<XiaoMiStep> xiaoMiSteps = FeatureParser.Companion.XiaoMiGetSteps(getContext());
+        recordDaysTextView.setText(String.valueOf(xiaoMiSteps.getLast().getMSteps()));
     }
 
     /**
