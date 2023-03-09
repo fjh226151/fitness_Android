@@ -7,6 +7,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
@@ -143,6 +144,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                         ok = findViewById(R.id.ok);
                         cancel = findViewById(R.id.cancel);
                         ok.setOnClickListener(v -> {
+                            if (TextUtils.isEmpty(goodsName.getText().toString())) {
+                                showToast("请补充食物名称");
+                                return;
+                            }
+                            if (TextUtils.isEmpty(goodsValue.getText().toString())) {
+                                showToast("请补充食物消耗的能量");
+                                return;
+                            }
                             showLoadingDialog();
                             goods goods = new goods(MMKV.defaultMMKV().decodeString("userId"), goodsName.getText().toString(), goodsValue.getText().toString());
                             goods.save(new SaveListener<String>() {
