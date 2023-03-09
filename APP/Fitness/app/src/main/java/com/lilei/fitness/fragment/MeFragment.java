@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
 import com.lilei.fitness.R;
@@ -70,6 +74,15 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
     private SensorManager mSensorManager;
     private View v;
     private LinearLayout me_eat_goods;
+    private Handler handler = new Handler(Looper.getMainLooper()){
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            super.handleMessage(msg);
+            if (msg.what == 1) {
+                getTodayDeplete();
+            }
+        }
+    };
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Nullable
@@ -90,7 +103,7 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
                 }
             }
             getTodayDeplete();
-
+            handler.sendEmptyMessageDelayed(1, 1000 * 60);
         }
         return v;
     }
@@ -106,6 +119,7 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             getgUser();
         }
+        getTodayDeplete();
     }
 
     private void updateData() {
