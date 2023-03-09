@@ -36,45 +36,27 @@ import okhttp3.Call;
  * Created by djzhao on 17/04/30.
  */
 
-public class FoundFragment extends BaseFragment implements AdapterView.OnItemClickListener {
+public class FoundFragment extends BaseFragment {
 
-    private ListView foundList;
-    private FoundNewsAdapter adapter;
     private Context mContext;
 
     private List<NewsListForFound> mList;
+    private View v;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_found, null);
-        findViewById(v);
-        initView();
+        if (null == v) {
+            v = inflater.inflate(R.layout.fragment_found, null);
+        }
+        init();
         return v;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-       // reLoadNews();
+    private void init() {
+
     }
 
 
-    public void findViewById(View v) {
-        foundList = (ListView) v.findViewById(R.id.found_list);
-    }
-
-    public void initView() {
-        mContext = getActivity();
-        foundList.setOnItemClickListener(this);
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent = new Intent();
-        intent.setClass(getActivity(), NewsDetailActivity.class);
-        intent.putExtra("newsId", mList.get(position).getNewsId());
-        startActivity(intent);
-    }
 
 }

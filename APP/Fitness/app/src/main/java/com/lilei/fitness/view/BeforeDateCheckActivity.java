@@ -38,72 +38,7 @@ public class BeforeDateCheckActivity extends BaseActivity {
             @Override
             public void run() {
                 SystemClock.sleep(1000);
-                getCheckedList();
             }
         }.start();
-    }
-
-    private void getCheckedList() {
-        String url = Constants.BASE_URL + "DailyCheck?method=getCheckedList";
-        OkHttpUtils
-                .post()
-                .url(url)
-                .id(1)
-                .addParams("userId", Constants.USER.getUserId() + "")
-                .build()
-                .execute(new MyStringCallback());
-    }
-
-    public class MyStringCallback extends StringCallback {
-        @Override
-        public void onResponse(String response, int id) {
-            SystemClock.sleep(1000);
-            switch (id) {
-                case 1:
-                    if (response.contains("error")) {
-                        DisplayToast("暂时无法获取数据");
-                        finish();
-                    } else {
-                        if (response.length() == 0) {
-                            Constants.DAILYCHECKEDLIST = new ArrayList<>();
-                            Constants.DAILYCHECKEDLIST.add("2000-1-1");
-                        } else {
-                            String[] dates = response.split(",");
-                            if (Constants.DAILYCHECKEDLIST == null) {
-                                Constants.DAILYCHECKEDLIST = new ArrayList<String>();
-                            } else {
-                                Constants.DAILYCHECKEDLIST.clear();
-                            }
-                            for (String s : dates) {
-                                String[] split = s.split("-");
-                                s = split[0] + "-" + removeHeadingZero(split[1]) + "-" + removeHeadingZero(split[2]);
-                                Constants.DAILYCHECKEDLIST.add(s);
-                            }
-                        }
-                        openActivity(DateCheckActivity.class);
-                        finish();
-                    }
-                    break;
-            }
-        }
-
-        /**
-         * 去除头部的0
-         * @param str
-         * @return
-         */
-        public String removeHeadingZero(String str) {
-            if (str.startsWith("0")) {
-                return str.substring(1);
-            } else {
-                return str;
-            }
-        }
-
-        @Override
-        public void onError(Call arg0, Exception arg1, int arg2) {
-            uiFlusHandler.sendEmptyMessage(DISMISS_LOADING_DIALOG);
-            DisplayToast("网络链接出错！");
-        }
     }
 }

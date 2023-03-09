@@ -22,7 +22,7 @@ public class BaseFragment extends Fragment {
     }
 
     protected void hideLoadingDialog() {
-        if (popupView != null) {
+        if (popupView != null && popupView.isShow()) {
             popupView.dismiss();
         }
     }

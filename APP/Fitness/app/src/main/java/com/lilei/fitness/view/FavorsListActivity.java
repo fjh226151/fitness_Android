@@ -65,24 +65,9 @@ public class FavorsListActivity extends BaseActivity implements AdapterView.OnIt
         mListView.setOnItemClickListener(this);
         this.title_back.setOnClickListener(this);
 
-        getComments();
     }
 
-    /**
-     * 获取评论
-     */
-    private void getComments() {
-        uiFlusHandler.sendEmptyMessage(SHOW_LOADING_DIALOG);
 
-        String url = Constants.BASE_URL + "Favor?method=getFavorsList";
-        OkHttpUtils
-                .post()
-                .url(url)
-                .id(1)
-                .addParams("userId", Constants.USER.getUserId() + "")
-                .build()
-                .execute(new MyStringCallback());
-    }
 
     @Override
     public void onClick(View v) {
@@ -90,39 +75,6 @@ public class FavorsListActivity extends BaseActivity implements AdapterView.OnIt
             case R.id.title_back:
                 finish();
                 break;
-        }
-    }
-
-    public class MyStringCallback extends StringCallback {
-        @Override
-        public void onResponse(String response, int id) {
-            Gson gson = new Gson();
-            switch (id) {
-                case 1:
-                    uiFlusHandler.sendEmptyMessage(DISMISS_LOADING_DIALOG);
-                    Type type = new TypeToken<ArrayList<NewsListItem>>() {
-                    }.getType();
-                    mList = gson.fromJson(response, type);
-                    if (mList == null || mList.size() == 0) {
-                        DisplayToast("暂无数据");
-                        return;
-                    } else {
-                        // 存储用户
-                        adapter = new NormalListAdapter(mContext, mList);
-                        mListView.setAdapter(adapter);
-                        // mListView.notify();
-                    }
-                    break;
-
-                default:
-                    DisplayToast("what?");
-                    break;
-            }
-        }
-
-        @Override
-        public void onError(Call arg0, Exception arg1, int arg2) {
-            DisplayToast("网络链接出错！");
         }
     }
 

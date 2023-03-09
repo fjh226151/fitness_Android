@@ -31,7 +31,7 @@ import okhttp3.Call;
  * Created by djzhao on 17/05/04.
  */
 
-public class CommentsListActivity extends BaseActivity implements AdapterView.OnItemClickListener, View.OnClickListener {
+public class CommentsListActivity extends BaseActivity implements View.OnClickListener {
 
     private String TITLE_NAME = "我的评论";
     private View title_back;
@@ -64,27 +64,8 @@ public class CommentsListActivity extends BaseActivity implements AdapterView.On
         mContext = this;
         this.titleText.setText(TITLE_NAME);
         uiFlusHandler = new MyDialogHandler(mContext, "加载中...");
-
-        mListView.setOnItemClickListener(this);
         this.title_back.setOnClickListener(this);
 
-        getComments();
-    }
-
-    /**
-     * 获取评论
-     */
-    private void getComments() {
-        uiFlusHandler.sendEmptyMessage(SHOW_LOADING_DIALOG);
-
-        String url = Constants.BASE_URL + "Comment?method=getCommentsList";
-        OkHttpUtils
-                .post()
-                .url(url)
-                .id(1)
-                .addParams("userId", Constants.USER.getUserId() + "")
-                .build()
-                .execute(new MyStringCallback());
     }
 
     @Override
@@ -96,41 +77,4 @@ public class CommentsListActivity extends BaseActivity implements AdapterView.On
         }
     }
 
-    public class MyStringCallback extends StringCallback {
-        @Override
-        public void onResponse(String response, int id) {
-            Gson gson = new Gson();
-            switch (id) {
-                case 1:
-                    uiFlusHandler.sendEmptyMessage(DISMISS_LOADING_DIALOG);
-                    Type type = new TypeToken<ArrayList<NewsListItem>>() {
-                    }.getType();
-                    mList = gson.fromJson(response, type);
-                    if (mList == null || mList.size() == 0) {
-                        DisplayToast("暂无数据");
-                        return;
-                    } else {
-                        // 存储用户
-                        adapter = new NormalListAdapter(mContext, mList);
-                        mListView.setAdapter(adapter);
-                        // mListView.notify();
-                    }
-                    break;
-
-                default:
-                    DisplayToast("what?");
-                    break;
-            }
-        }
-
-        @Override
-        public void onError(Call arg0, Exception arg1, int arg2) {
-            DisplayToast("网络链接出错！");
-        }
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-    }
 }

@@ -27,6 +27,8 @@ import com.lxj.xpopup.impl.LoadingPopupView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.tencent.mmkv.MMKV;
 
+import tech.gujin.toast.ToastUtil;
+
 public abstract class BaseActivity extends Activity {
 
     public static final String TAG = BaseActivity.class.getSimpleName();
@@ -71,6 +73,10 @@ public abstract class BaseActivity extends Activity {
         return getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
     }
 
+    protected void showToast(String s) {
+        ToastUtil.show(s);
+    }
+
     @SuppressLint("NewApi")
     protected void hideOrShowSoftInput(boolean paramBoolean,
                                        EditText paramEditText) {
@@ -103,7 +109,6 @@ public abstract class BaseActivity extends Activity {
             ImageLoaderConfig.initImageLoader(this, Constants.BASE_IMAGE_CACHE);
         this.tManager = ((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE));
         this.imm = ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE));
-
     }
 
     protected void onDestroy() {

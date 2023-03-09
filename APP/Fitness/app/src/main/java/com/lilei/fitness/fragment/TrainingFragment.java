@@ -30,7 +30,6 @@ public class TrainingFragment extends BaseFragment implements View.OnClickListen
         View v = inflater.inflate(R.layout.fragment_train, null);
         findViewById(v);
         initView();
-
         return v;
     }
 

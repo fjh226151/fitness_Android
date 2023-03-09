@@ -98,23 +98,10 @@ public class VideoPlayer extends BaseActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 videoStop = true;
-                saveTrainRecord();
+               // saveTrainRecord();
             }
         });
         videoView.start();
-    }
-
-    private void saveTrainRecord() {
-        uiFlusHandler.sendEmptyMessage(SHOW_LOADING_DIALOG);
-        String url = Constants.BASE_URL + "Train?method=addNewTrainRecord";
-        OkHttpUtils
-                .post()
-                .url(url)
-                .id(1)
-                .addParams("userId", Constants.USER.getUserId() + "")
-                .addParams("duration", duration)
-                .build()
-                .execute(new MyStringCallback());
     }
 
     private void showInfo() {
@@ -143,29 +130,6 @@ public class VideoPlayer extends BaseActivity {
                 })
                 .create()
                 .show();
-    }
-
-    public class MyStringCallback extends StringCallback {
-        @Override
-        public void onResponse(String response, int id) {
-            uiFlusHandler.sendEmptyMessage(DISMISS_LOADING_DIALOG);
-            switch (id) {
-                case 1:
-                    if (response.contains("error")) {
-                        DisplayToast("锻炼记录同步失败");
-                    }
-                    showInfo();
-                    break;
-                default:
-                    DisplayToast("what?");
-                    break;
-            }
-        }
-
-        @Override
-        public void onError(Call arg0, Exception arg1, int arg2) {
-            Toast.makeText(mContext, "网络链接出错！", Toast.LENGTH_SHORT).show();
-        }
     }
 
     @Override

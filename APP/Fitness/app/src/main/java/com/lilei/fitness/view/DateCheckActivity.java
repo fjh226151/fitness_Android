@@ -71,20 +71,6 @@ public class DateCheckActivity extends BaseActivity implements View.OnClickListe
         echoChecked();
     }
 
-    /**
-     * 获取签到记录
-     */
-    private void getDailyCheck() {
-        uiFlusHandler.sendEmptyMessage(SHOW_LOADING_DIALOG);
-        String url = Constants.BASE_URL + "DailyCheck?method=getCheckedList";
-        OkHttpUtils
-                .post()
-                .url(url)
-                .id(2)
-                .addParams("userId", Constants.USER.getUserId() + "")
-                .build()
-                .execute(new MyStringCallback());
-    }
 
     @Override
     protected void findViewById() {
@@ -111,76 +97,13 @@ public class DateCheckActivity extends BaseActivity implements View.OnClickListe
                 this.finish();
                 break;
             case R.id.date_btn_check:
-                todayCheck();
+              //  todayCheck();
                 break;
         }
     }
 
-    /**
-     * 今日打卡
-     */
-    private void todayCheck() {
-        /* 日期弹窗选择
-        final AlertDialog dialog = new AlertDialog.Builder(DateCheckActivity.this).create();
-        dialog.show();
-        DatePicker picker = new DatePicker(DateCheckActivity.this);
-        picker.setDate(2015, 10);
-        picker.setMode(DPMode.SINGLE);
-        picker.setOnDatePickedListener(new DatePicker.OnDatePickedListener() {
-            @Override
-            public void onDatePicked(String date) {
-                Toast.makeText(DateCheckActivity.this, date, Toast.LENGTH_LONG).show();
-                dialog.dismiss();
-            }
-        });
-        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        dialog.getWindow().setContentView(picker, params);
-        dialog.getWindow().setGravity(Gravity.CENTER);
-        */
-        uiFlusHandler.setTip("正在打卡...");
-        uiFlusHandler.sendEmptyMessage(SHOW_LOADING_DIALOG);
-        String url = Constants.BASE_URL + "DailyCheck?method=check";
-        OkHttpUtils
-                .post()
-                .url(url)
-                .id(1)
-                .addParams("userId", Constants.USER.getUserId() + "")
-                .build()
-                .execute(new MyStringCallback());
-    }
 
-    public class MyStringCallback extends StringCallback {
-        @Override
-        public void onResponse(String response, int id) {
-            uiFlusHandler.sendEmptyMessage(DISMISS_LOADING_DIALOG);
-            switch (id) {
-                case 1:
-                    if (response.contains("success")) {
-                        DisplayToast("今日打卡成功");
-                    } else {
-                        DisplayToast(response);
-                    }
-                    break;
-                case 2:
-                    if (response.contains("error")) {
-                        DisplayToast("暂时无法获取数据");
-                    } else {
-                        String[] dates = response.split(",");
-                        for (String s: dates) {
-//                            dailyCheckedList.add(s);
-                        }
-                    }
-                    break;
-            }
-        }
 
-        @Override
-        public void onError(Call arg0, Exception arg1, int arg2) {
-            uiFlusHandler.sendEmptyMessage(DISMISS_LOADING_DIALOG);
-            DisplayToast("网络链接出错！");
-        }
-    }
 
     /**
      * 已经打卡数据展示

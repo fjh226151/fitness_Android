@@ -1,7 +1,7 @@
 package com.lilei.fitness.view;
 
 
-
+import static java.security.AccessController.getContext;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -9,19 +9,29 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
-
 import com.lilei.fitness.R;
+import com.lilei.fitness.bean.goods;
 import com.lilei.fitness.fragment.FoundFragment;
 import com.lilei.fitness.fragment.MeFragment;
 import com.lilei.fitness.fragment.TrainingFragment;
 import com.lilei.fitness.utils.AppManager;
 import com.lilei.fitness.view.base.BaseActivity;
 import com.lilei.fitness.view.test.VideoPlayer;
+import com.lxj.xpopup.XPopup;
+import com.lxj.xpopup.core.BasePopupView;
+import com.lxj.xpopup.interfaces.OnInputConfirmListener;
+import com.tencent.mmkv.MMKV;
+
+import org.w3c.dom.Text;
+
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
@@ -78,11 +88,15 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         tabMe.setOnClickListener(this);
         btnCheck.setOnClickListener(this);
         btnAddNews.setOnClickListener(this);
-
-        trainingFragment = new TrainingFragment();
-        foundFragment = new FoundFragment();
-        meFragment = new MeFragment();
-
+        if (trainingFragment == null) {
+            trainingFragment = new TrainingFragment();
+        }
+        if (foundFragment == null) {
+            foundFragment = new FoundFragment();
+        }
+        if (meFragment == null) {
+            meFragment = new MeFragment();
+        }
         refreashFragment(R.id.bottom_train);
     }
 
@@ -110,7 +124,46 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 openActivity(BeforeDateCheckActivity.class);
                 break;
             case R.id.found_new_add:
-                openActivity(ReleaseNewsActivity.class);
+                new XPopup.Builder(this).asCustom(new BasePopupView(this) {
+                    private EditText goodsName;
+                    private EditText goodsValue;
+                    private TextView ok;
+                    private TextView cancel;
+
+                    @Override
+                    protected int getPopupLayoutId() {
+                        return R.layout.dialog_confrim_cancel;
+                    }
+
+                    @Override
+                    protected void onCreate() {
+                        super.onCreate();
+                        goodsName = findViewById(R.id.goods);
+                        goodsValue = findViewById(R.id.depleteGoodsValue);
+                        ok = findViewById(R.id.ok);
+                        cancel = findViewById(R.id.cancel);
+                        ok.setOnClickListener(v -> {
+                            showLoadingDialog();
+                            goods goods = new goods(MMKV.defaultMMKV().decodeString("userId"), goodsName.getText().toString(), goodsValue.getText().toString());
+                            goods.save(new SaveListener<String>() {
+                                @Override
+                                public void done(String s, BmobException e) {
+                                    hideLoadingDialog();
+                                    if (e == null) {
+                                        showToast("数据添加成功");
+
+                                    } else {
+                                        showToast("添加数据失败,请联系管理员");
+                                    }
+                                    dismiss();
+                                }
+                            });
+                        });
+                        cancel.setOnClickListener(v -> {
+                            dismiss();
+                        });
+                    }
+                }).show();
                 break;
         }
     }
@@ -143,7 +196,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         switch (btnId) {
             case R.id.bottom_train:
-                fragmentTransaction.replace(R.id.fragment_container,  trainingFragment);
+                fragmentTransaction.replace(R.id.fragment_container, trainingFragment);
                 break;
             case R.id.bottom_found:
                 fragmentTransaction.replace(R.id.fragment_container, foundFragment);

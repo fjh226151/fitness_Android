@@ -45,12 +45,6 @@
             android:layout_height="0.1dp"
             android:background="@color/darkgrey" />
 
-        <ListView
-            android:id="@+id/found_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="1dp"
-            android:paddingTop="2dp"></ListView>
     </LinearLayout>
 
 </LinearLayout>

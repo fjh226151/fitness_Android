@@ -122,75 +122,8 @@ public class ReleaseNewsActivity extends BaseActivity implements View.OnClickLis
             content.requestFocus();
             return;
         }
-        releaseNews();
     }
 
-    private void releaseNews() {
-        String titleStr = title.getText().toString();
-        String contentStr = content.getText().toString();
-
-        uiFlusHandler.sendEmptyMessage(DISMISS_LOADING_DIALOG);
-        String url;
-
-        /*AsyncHttpClient httpClient = new AsyncHttpClient();
-
-        RequestParams param = new RequestParams();
-        try {
-            param.put("file", imageFile);
-            param.put("content", contentStr);
-            param.put("title", titleStr);
-            param.put("userId", Constants.USER.getUserId() + "");
-
-            httpClient.post(url, param, new AsyncHttpResponseHandler() {
-                @Override
-                public void onStart() {
-                    uiFlusHandler.sendEmptyMessage(SHOW_LOADING_DIALOG);
-                    super.onStart();
-                }
-
-                @Override
-                public void onSuccess(int i, cz.msebera.android.httpclient.Header[] headers, byte[] bytes) {
-                    uiFlusHandler.sendEmptyMessage(DISMISS_LOADING_DIALOG);
-                    DisplayToast("success");
-                }
-
-                @Override
-                public void onFailure(int i, cz.msebera.android.httpclient.Header[] headers, byte[] bytes, Throwable throwable) {
-                    DisplayToast("failure");
-                }
-            });
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }*/
-
-
-        if (imageFile != null && imageFile.exists()) {
-            url = Constants.BASE_URL + "News?method=releaseNewsWithImage";
-            OkHttpUtils
-                    .post()
-                    .addFile("image", imageFile.getName(), imageFile)
-                    .url(url)
-                    .id(1)
-                    .addHeader("content-Type", "multipart/form-data; boundary=" + UUID.randomUUID().toString())
-                    .addParams("title", titleStr)
-                    .addParams("content", contentStr)
-                    .addParams("userId", Constants.USER.getUserId() + "")
-                    .build()
-                    .execute(new MyStringCallback());
-        } else {
-            url = Constants.BASE_URL + "News?method=releaseNewsWithoutImage";
-            OkHttpUtils
-                    .post()
-                    .url(url)
-                    .id(1)
-                    .addParams("title", titleStr)
-                    .addParams("content", contentStr)
-                    .addParams("userId", Constants.USER.getUserId() + "")
-                    .build()
-                    .execute(new MyStringCallback());
-        }
-    }
 
     private void getPhoto() {
         FishBun.with(ReleaseNewsActivity.this)
@@ -245,29 +178,4 @@ public class ReleaseNewsActivity extends BaseActivity implements View.OnClickLis
         }
     }
 
-    public class MyStringCallback extends StringCallback {
-        @Override
-        public void onResponse(String response, int id) {
-            uiFlusHandler.sendEmptyMessage(DISMISS_LOADING_DIALOG);
-            Gson gson = new Gson();
-            switch (id) {
-                case 1:
-                    if (response.contains("success")) {
-                        DisplayToast("新鲜事发布成功");
-                        finish();
-                    } else {
-                        DisplayToast("请稍后再试");
-                    }
-                    break;
-                default:
-                    DisplayToast("what?");
-                    break;
-            }
-        }
-
-        @Override
-        public void onError(Call arg0, Exception arg1, int arg2) {
-            DisplayToast("网络链接出错！");
-        }
-    }
 }

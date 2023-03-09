@@ -154,44 +154,4 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
     }
 
 
-    public class MyStringCallback extends StringCallback {
-
-        @Override
-        public void onResponse(String response, int id) {
-            Gson gson = new Gson();
-            switch (id) {
-                case 1:
-                    uiFlusHandler.sendEmptyMessage(DISMISS_LOADING_DIALOG);
-                    User user = null;
-                    try {
-                        user = gson.fromJson(response, User.class);
-                    } catch (JsonSyntaxException e) {
-                        user = null;
-                    }
-                    if (user == null) {
-                        DisplayToast(response);
-                        return;
-                    } else {
-                        // 存储用户
-                        boolean result = SharedPreferencesUtils.saveUserInfo(mContext, user);
-                        if (result) {
-                            Toast.makeText(mContext, "注册成功，请登录！", Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(mContext, "用户名密码保存失败", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                    openActivity(LoginActivity.class);
-                    AppManager.getInstance().killAllActivity();
-                    break;
-                default:
-                    DisplayToast("what?");
-                    break;
-            }
-        }
-
-        @Override
-        public void onError(Call arg0, Exception arg1, int arg2) {
-            DisplayToast("网络链接出错！");
-        }
-    }
 }
