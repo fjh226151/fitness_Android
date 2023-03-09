@@ -111,7 +111,7 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
     private void updateData() {
         recordDaysTextView.setText(mStepCounter.toString());
         Log.e("test", "今日消耗:" + depleteTodayAll);
-        exerciseTimeTextView.setText(String.valueOf((mStepCounter + depleteTodayAll) * 0.04));
+        exerciseTimeTextView.setText(SensorUtil.Companion.setMoney((mStepCounter + depleteTodayAll) * 0.04));
     }
 
     public void findViewById(View v) {
