@@ -74,7 +74,7 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
     private SensorManager mSensorManager;
     private View v;
     private LinearLayout me_eat_goods;
-    private Handler handler = new Handler(Looper.getMainLooper()){
+    private Handler handler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);
@@ -272,6 +272,9 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
                             }
                             Log.e("test", "value:" + depleteTodayAll);
                             updateData();
+                            if (depleteTodayAll != 0) {
+                                depleteTodayAll = 0;
+                            }
                         }
                     }
                 });
