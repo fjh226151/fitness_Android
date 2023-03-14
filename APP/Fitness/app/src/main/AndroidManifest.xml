@@ -95,6 +95,7 @@
         <provider
             android:name="cn.bmob.v3.util.BmobContentProvider"
             android:authorities="com.lilei.fitness.BmobContentProvider"></provider>
+
     </application>
 
 </manifest>

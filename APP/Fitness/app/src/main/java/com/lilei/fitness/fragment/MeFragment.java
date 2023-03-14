@@ -101,6 +101,8 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
                         }
                     }
                 }
+            } else {
+                showToast("暂不支持该设备计步");
             }
             getTodayDeplete();
             handler.sendEmptyMessageDelayed(1, 1000 * 60);
