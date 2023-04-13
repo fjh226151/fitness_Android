@@ -131,16 +131,16 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
     }
 
     public void findViewById(View v) {
-        homepage = (LinearLayout) v.findViewById(R.id.me_homepage);
-        comment = (LinearLayout) v.findViewById(R.id.me_item_comment);
-        record = (LinearLayout) v.findViewById(R.id.me_item_reord);
-        favor = (LinearLayout) v.findViewById(R.id.me_item_favor);
-        xiaohao = (TextView) v.findViewById(R.id.xiaohao);
-        usernameTV = (TextView) v.findViewById(R.id.me_homepage_username);
-        exerciseTimeTextView = (TextView) v.findViewById(R.id.me_exercise_time);
-        recordDaysTextView = (TextView) v.findViewById(R.id.me_record_days);
-        exit = (TextView) v.findViewById(R.id.me_item_exit);
-        me_eat_goods = (LinearLayout) v.findViewById(R.id.me_eat_goods);
+        homepage = v.findViewById(R.id.me_homepage);
+        comment = v.findViewById(R.id.me_item_comment);
+        record = v.findViewById(R.id.me_item_reord);
+        favor = v.findViewById(R.id.me_item_favor);
+        xiaohao = v.findViewById(R.id.xiaohao);
+        usernameTV = v.findViewById(R.id.me_homepage_username);
+        exerciseTimeTextView = v.findViewById(R.id.me_exercise_time);
+        recordDaysTextView = v.findViewById(R.id.me_record_days);
+        exit = v.findViewById(R.id.me_item_exit);
+        me_eat_goods = v.findViewById(R.id.me_eat_goods);
     }
 
     public void initView() {

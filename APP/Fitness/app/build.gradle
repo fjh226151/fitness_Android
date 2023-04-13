@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 android {
+    signingConfigs {
+        debug {
+            storeFile file('D:\\AndroidProject\\fintess\\fitness_Android\\app.jks')
+            storePassword '123456'
+            keyAlias 'key0'
+            keyPassword '123456'
+        }
+    }
     compileSdk 33
     buildToolsVersion '30.0.2'
     defaultConfig {
