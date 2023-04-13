@@ -31,6 +31,7 @@ import com.lilei.fitness.utils.XiaoMiStep;
 import com.lilei.fitness.view.BeforeDateCheckActivity;
 import com.lilei.fitness.view.CommentsListActivity;
 import com.lilei.fitness.view.FavorsListActivity;
+import com.lilei.fitness.view.GoodsListActivity;
 import com.lilei.fitness.view.HomepageActivity;
 import com.lilei.fitness.view.LoginActivity;
 import com.lxj.xpopup.XPopup;
@@ -189,7 +190,8 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), FavorsListActivity.class));
                 break;
             case R.id.me_item_reord:
-                startActivity(new Intent(getActivity(), BeforeDateCheckActivity.class));
+                //跳转食物消耗列表activtiy
+                startActivity(new Intent(getActivity(), GoodsListActivity.class));
                 break;
             case R.id.me_item_exit:
                 MMKV.defaultMMKV().encode("userId", "");

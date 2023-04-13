@@ -251,7 +251,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@string/me_record_text"
+                            android:text="食物消耗记录"
                             android:textSize="14sp" />
 
                         <ImageView

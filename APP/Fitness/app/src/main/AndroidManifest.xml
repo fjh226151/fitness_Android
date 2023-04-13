@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.lilei.fitness">
+
     <uses-permission android:name="miui.permission.READ_STEPS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -13,8 +14,10 @@
     <!--保持CPU 运转，屏幕和键盘灯有可能是关闭的,用于文件上传和下载 -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
-    <uses-feature android:name="android.hardware.sensor.stepcounter"/>
-    <uses-feature android:name="feature:android.hardware.sensor.stepdetector"/>
+
+    <uses-feature android:name="android.hardware.sensor.stepcounter" />
+    <uses-feature android:name="feature:android.hardware.sensor.stepdetector" />
+
     <application
         android:name=".app"
         android:allowBackup="true"
@@ -63,6 +66,10 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.HomepageActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.GoodsListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity

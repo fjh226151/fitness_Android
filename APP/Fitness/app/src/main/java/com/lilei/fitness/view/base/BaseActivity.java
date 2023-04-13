@@ -11,11 +11,14 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.PersistableBundle;
 import android.telephony.TelephonyManager;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
 
 import com.lilei.fitness.image.ImageLoaderConfig;
 import com.lilei.fitness.utils.AppManager;
@@ -102,6 +105,10 @@ public abstract class BaseActivity extends Activity {
 
     protected abstract void initView();
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
+        super.onCreate(savedInstanceState, persistentState);
+    }
     protected void onCreate(Bundle paramBundle) {
         super.onCreate(paramBundle);
         AppManager.getInstance().addActivity(this);
