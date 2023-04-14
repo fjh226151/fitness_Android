@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -41,6 +42,10 @@ import com.tencent.mmkv.MMKV;
 import org.jetbrains.annotations.Nullable;
 import org.json.JSONArray;
 import org.w3c.dom.Text;
+
+import com.lxj.xpopup.XPopup;
+import com.lxj.xpopup.core.BasePopupView;
+import com.lxj.xpopup.interfaces.OnInputConfirmListener;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -177,6 +182,7 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
      */
 
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -200,34 +206,65 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), LoginActivity.class));
                 break;
             case R.id.me_eat_goods: {
-                new XPopup.Builder(getContext()).asInputConfirm("今天你吃了什么", "请输入食物名称",
-                                text -> {
-                                    showLoadingDialog();
-                                    BmobQuery<goods> goodsBmobQuery = new BmobQuery<goods>();
-                                    goodsBmobQuery.findObjects(new FindListener<goods>() {
-                                        @Override
-                                        public void done(List<goods> list, BmobException e) {
-                                            hideLoadingDialog();
-                                            if (e == null) {
-                                                if (list.stream().anyMatch(a -> a.getGoodName().equals(text))) {
-                                                    eatFoods userId = new eatFoods(text, MMKV.defaultMMKV().decodeString("userId"), String.valueOf(System.currentTimeMillis()));
-                                                    userId.save(new SaveListener<String>() {
-                                                        @Override
-                                                        public void done(String s, BmobException e) {
-                                                            showToast("已记录");
-                                                            getTodayDeplete();
-                                                        }
-                                                    });
-                                                } else {
-                                                    showToast("已知食物中不包含该食物,请先添加");
+
+                new XPopup.Builder(getContext()).asCustom(new BasePopupView(getContext()) {
+                    private EditText goodsName;
+                    private EditText goodsValue;
+                    private TextView ok;
+                    private TextView cancel;
+
+                    @Override
+                    protected int getPopupLayoutId() {
+                        return R.layout.dialog_confrim_eat;
+                    }
+
+                    @Override
+                    protected void onCreate() {
+                        super.onCreate();
+                        goodsName = findViewById(R.id.goods);
+                        goodsValue = findViewById(R.id.depleteGoodsValue);
+                        ok = findViewById(R.id.ok);
+                        cancel = findViewById(R.id.cancel);
+                        ok.setOnClickListener(v -> {
+                            if (TextUtils.isEmpty(goodsName.getText().toString())) {
+                                showToast("请补充食物名称");
+                                return;
+                            }
+                            if (TextUtils.isEmpty(goodsValue.getText().toString())) {
+                                showToast("请补充吃了几份");
+                                return;
+                            }
+                            showLoadingDialog();
+                            BmobQuery<goods> goodsBmobQuery = new BmobQuery<goods>();
+                            goodsBmobQuery.findObjects(new FindListener<goods>() {
+                                @Override
+                                public void done(List<goods> list, BmobException e) {
+                                    hideLoadingDialog();
+                                    if (e == null) {
+                                        if (list.stream().anyMatch(a -> a.getGoodName().equals(goodsName.getText().toString()))) {
+                                            eatFoods userId = new eatFoods(goodsName.getText().toString(), MMKV.defaultMMKV().decodeString("userId"), String.valueOf(System.currentTimeMillis()), goodsValue.getText().toString());
+                                            userId.save(new SaveListener<String>() {
+                                                @Override
+                                                public void done(String s, BmobException e) {
+                                                    showToast("已记录");
+                                                    dismiss();
+                                                    getTodayDeplete();
                                                 }
-                                            } else {
-                                                showToast("请联系管理员");
-                                            }
+                                            });
+                                        } else {
+                                            showToast("已知食物中不包含该食物,请先添加");
                                         }
-                                    });
-                                })
-                        .show();
+                                    } else {
+                                        showToast("请联系管理员");
+                                    }
+                                }
+                            });
+                        });
+                        cancel.setOnClickListener(v -> {
+                            dismiss();
+                        });
+                    }
+                }).show();
                 break;
             }
         }
@@ -270,11 +307,14 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
                             for (goods goods : list) {
                                 for (eatFoods eatFoods : foodsArrayList) {
                                     if (eatFoods.getEatFood().equals(goods.getGoodName())) {
-                                        depleteTodayAll += Integer.parseInt(goods.getDepleteGoodsValue());
+                                        if (!TextUtils.isEmpty(eatFoods.getEatNum())) {
+                                            depleteTodayAll += Integer.parseInt(String.valueOf(Integer.parseInt(goods.getDepleteGoodsValue()) * Integer.parseInt(eatFoods.getEatNum())));
+                                        } else {
+                                            depleteTodayAll += Integer.parseInt(goods.getDepleteGoodsValue());
+                                        }
                                     }
                                 }
                             }
-                            Log.e("test", "value:" + depleteTodayAll);
                             updateData();
                             if (depleteTodayAll != 0) {
                                 depleteTodayAll = 0;
