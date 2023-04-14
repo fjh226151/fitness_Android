@@ -53,6 +53,6 @@ public class user extends BmobUser {
 
     @Override
     public String getTableName() {
-        return "user";
+        return "_User";
     }
 }

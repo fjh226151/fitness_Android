@@ -147,7 +147,11 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
                     Objects.requireNonNull(MMKV.defaultMMKV()).encode("userId", user.getObjectId());
                     openActivity(LoginActivity.class);
                 } else {
-                    ToastUtil.show("创建数据失败：" + e.getMessage());
+                    if (e.getMessage().contains("already taken.")) {
+                        ToastUtil.show("该用户名已存在");
+                    } else {
+                        ToastUtil.show("创建数据失败：" + e.getMessage());
+                    }
                 }
             }
         });
