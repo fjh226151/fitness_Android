@@ -69,6 +69,10 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".view.TodayEatListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".view.GoodsListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />

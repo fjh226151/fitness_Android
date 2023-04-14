@@ -35,6 +35,7 @@ import com.lilei.fitness.view.FavorsListActivity;
 import com.lilei.fitness.view.GoodsListActivity;
 import com.lilei.fitness.view.HomepageActivity;
 import com.lilei.fitness.view.LoginActivity;
+import com.lilei.fitness.view.TodayEatListActivity;
 import com.lxj.xpopup.XPopup;
 import com.lxj.xpopup.interfaces.OnInputConfirmListener;
 import com.tencent.mmkv.MMKV;
@@ -192,8 +193,8 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
             case R.id.me_item_comment:
                 startActivity(new Intent(getActivity(), CommentsListActivity.class));
                 break;
-            case R.id.me_item_favor:
-                startActivity(new Intent(getActivity(), FavorsListActivity.class));
+            case R.id.me_item_favor://今日食用列表
+                startActivity(new Intent(getActivity(), TodayEatListActivity.class));
                 break;
             case R.id.me_item_reord:
                 //跳转食物消耗列表activtiy
@@ -206,7 +207,6 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), LoginActivity.class));
                 break;
             case R.id.me_eat_goods: {
-
                 new XPopup.Builder(getContext()).asCustom(new BasePopupView(getContext()) {
                     private EditText goodsName;
                     private EditText goodsValue;

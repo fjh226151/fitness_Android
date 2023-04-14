@@ -4,6 +4,8 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+import com.lilei.fitness.utils.TimeUtila;
+
 /**
  * Example local unit test, which will execute on the development machine (host).
  *
@@ -17,6 +19,6 @@ public class ExampleUnitTest {
 
     @Test
     public void test() {
-        System.out.println("时间戳:" + System.currentTimeMillis());
+        System.out.println("时间戳:" + TimeUtila.Companion.getSameDay1Point());
     }
 }
